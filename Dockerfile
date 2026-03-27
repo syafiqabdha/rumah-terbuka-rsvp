@@ -26,6 +26,7 @@ RUN mkdir -p .next && mkdir -p public
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/tsconfig.json ./
+RUN mkdir -p .next && mkdir -p public
 COPY --from=builder /app/tailwind.config.js ./
 COPY --from=builder /app/postcss.config.js ./
 COPY --from=builder /app/lib ./lib
