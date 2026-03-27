@@ -9,6 +9,7 @@ COPY next.config.js ./
 COPY tailwind.config.js ./
 COPY postcss.config.js ./
 COPY . .
+COPY . ./data
 
 RUN npm install && npm run build
 
