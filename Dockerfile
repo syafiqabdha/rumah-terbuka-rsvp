@@ -8,6 +8,7 @@ COPY tsconfig.json ./
 COPY next.config.js ./
 COPY tailwind.config.js ./
 RUN mkdir -p public
+RUN mkdir -p public
 COPY postcss.config.js ./
 COPY . .
 COPY . ./data
@@ -27,8 +28,6 @@ RUN mkdir -p .next && mkdir -p public
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/tsconfig.json ./
-RUN mkdir -p .next && mkdir -p public
-COPY --from=builder /app/lib ./lib
 COPY --from=builder /app/app ./app
 COPY --from=builder /app/data ./data
 COPY --from=builder /app/node_modules ./node_modules
